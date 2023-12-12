@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Form</title>
+  <link rel="stylesheet" href="node_modules/normalize.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="banner-side">
+    <div class="logo-container">
+      <img src="" alt="" srcset="">
+    </div>
+    <div class="banner-credit">Photo by <a href="https://unsplash.com/@roseonajourney?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Melody Zimmerman</a> on <a href="https://unsplash.com/photos/a-person-pours-coffee-into-a-glass-cup-bbRp06Xp4YM?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></div>
+  </div>
+
+  <div class="form-side">
+    <div class="quote-box">Some random text is going here to tell you to sign up to this form.<br>Do you want to?</div>
+    <div class="form-box">
+      <p>Let's do this</p>
+      <form action="https://httpbin.org/post" method="post">
+        <div class="form-row">
+          <label for="first-name">First Name</label>
+          <input type="text" name="user-first-name" id="first-name">
+          <label for="last-name">Last Name</label>
+          <input type="text" name="user-last-name" id="last-name">
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" name="user-email" id="email">
+          <label for="tel">Phone Number</label>
+          <input type="tel" name="user-telephone" id="tel">
+        </div>
+
+        <div class="form-row">
+          <label for="pwd">Password</label>
+          <input type="password" name="user-password" id="pwd">
+          <label for="pwd-confirm">Confirm Password</label>
+          <input type="password" id="pwd-confirm">
+        </div>
+
+        <button type="submit">Create Account</button>
+        <div>Already have an account? <a href="">Log in</a></div>
+      </form>
+    </div>
+    <div class="submit-box"></div>
+  </div>
+</body>
+</html>
