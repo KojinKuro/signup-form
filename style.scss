@@ -101,7 +101,7 @@ body {
     flex: 1;
 
     button {
-      margin-bottom: $gbl-padding;
+      margin-bottom: calc($gbl-padding / 2);
     }
 
     background-color: $form-clr2;
@@ -168,12 +168,12 @@ button {
   @include invalid;
 }
 
-.pwd-error-message {
-  --pwd-font: 0.75rem;
+.error-message {
+  --error-font: 0.75rem;
   color: red;
-  font-size: var(--pwd-font);
+  font-size: var(--error-font);
   br {
-    line-height: var(--pwd-font);
+    line-height: var(--error-font);
   }
 }
 

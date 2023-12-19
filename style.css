@@ -75,7 +75,7 @@ body {
   padding: 50px 50px;
 }
 .form-side .submit-box button {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 
 .form-row {
@@ -126,13 +126,13 @@ button {
   color: red;
 }
 
-.pwd-error-message {
-  --pwd-font: 0.75rem;
+.error-message {
+  --error-font: 0.75rem;
   color: red;
-  font-size: var(--pwd-font);
+  font-size: var(--error-font);
 }
-.pwd-error-message br {
-  line-height: var(--pwd-font);
+.error-message br {
+  line-height: var(--error-font);
 }
 
 .shadow {
