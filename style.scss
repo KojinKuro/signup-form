@@ -1,25 +1,189 @@
 @font-face {
-  font-family: norseBold;
-  src: url("./fonts/Norse-Bold.otf");
+  font-family: BratonComposer;
+  src: url("./fonts/BratonComposer-Regular.ttf");
 }
 
-* {
-  margin: 0;
-  padding: 0;
+$font-stack: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+$font-logo: BratonComposer;
+
+$gbl-padding: 50px;
+$form-spacing: 20px;
+
+$form-clr1: white;
+$form-clr2: rgb(247, 247, 247);
+$clr-shadow: rgba(139, 139, 139, 0.5);
+$clr-button: #596D48;
+
+$clr-input: #E5E7EB;
+
+@mixin invalid {
+  border-color: red;
+  color: red;
 }
 
 body {
+  font-family: $font-stack;
+  margin: 0;
+
   min-height: 100vh;
   display: flex;
 }
 
 .banner-side {
-  width: 20%;
+  width: 30%;
   background-image: url("./images/coffee.jpg");
   background-position: 50%;
   background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  text-align: center;
+  color: white;
+
+  .banner-logo {
+    margin-top: 200px;
+    padding: .5rem 0;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.4);
+
+    img {
+      width: 40%;
+      height: fill;
+    }
+  }
+
+  .banner-credit {
+    margin-bottom: 5px;
+    a {
+      color: inherit;
+    }
+  }
 }
 
 .form-side {
-  width: auto;
+  width: fill;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
+  .quote-box {
+    flex: 1;
+
+    ul {
+      padding: 0;
+      li {
+        list-style: none;
+      }
+    }
+
+    background-color: $form-clr2;
+    padding: $gbl-padding;
+
+    display: flex;
+    align-items: flex-end;
+  }
+  .form-box {
+    flex: 1;
+
+    background-color: $form-clr1;
+    padding: 0 $gbl-padding;
+    
+  }
+  .submit-box {
+    flex: 1;
+
+    button {
+      margin-bottom: $gbl-padding;
+    }
+
+    background-color: $form-clr2;
+    padding: $gbl-padding $gbl-padding;
+  }
 }
+
+.form-row {
+  width: 100%;
+  display: flex;
+  gap: 100px;
+  margin-bottom: $form-spacing;
+
+  .form-group {
+    flex: 0 1 400px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &:last-child {
+    margin-bottom: calc($form-spacing * 2);
+  }
+}
+
+form {
+  label {
+    font-size: 0.825rem;
+    text-transform: uppercase;
+  }
+
+  input {
+    height: 1.5rem;
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+
+    // border: none;
+    // border-bottom: 1px solid;
+    border-radius: 5px;
+    border: 1px solid $clr-input;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus {
+      border-color: rgb(131, 211, 211);
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+
+button {
+  background: $clr-button;
+  color: white;
+  border: none;
+  border-radius: 5px;
+
+  font-size: 1rem;
+  padding: 0.5em 2em;
+}
+
+.invalid {
+  @include invalid;
+}
+
+.pwd-error-message {
+  --pwd-font: 0.75rem;
+  color: red;
+  font-size: var(--pwd-font);
+  br {
+    line-height: var(--pwd-font);
+  }
+}
+
+// shadow stuff that i found online
+.shadow {
+  box-shadow: 0 0 8px 5px $clr-shadow;
+  clip-path: inset(var(--t,0) var(--r,0) var(--b,0) var(--l,0))
+}
+
+.top { --t:-100%; }
+.right { --r:-100%;}
+.bottom { --b:-100%; }
+.left { --l:-100%;}

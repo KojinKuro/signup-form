@@ -4,48 +4,79 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Signup Form</title>
+  <link rel="icon" href="https://fav.farm/🔢" />
+
+  <script src="script.js" defer></script>
+
   <link rel="stylesheet" href="node_modules/normalize.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="banner-side">
-    <div class="logo-container">
-      <img src="" alt="" srcset="">
+    <div class="banner-logo">
+      <img src="./images/logo.png" alt="">
+      <div>Odin Project Coffee Club</div>
     </div>
     <div class="banner-credit">Photo by <a href="https://unsplash.com/@roseonajourney?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Melody Zimmerman</a> on <a href="https://unsplash.com/photos/a-person-pours-coffee-into-a-glass-cup-bbRp06Xp4YM?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></div>
   </div>
 
   <div class="form-side">
-    <div class="quote-box">Some random text is going here to tell you to sign up to this form.<br>Do you want to?</div>
-    <div class="form-box">
-      <p>Let's do this</p>
-      <form action="https://httpbin.org/post" method="post">
+    <div class="quote-box">
+      <div class="quote-box-content">
+        <h1>Welcome to Our Coffee Lovers' Club!</h1>
+        <p>Join our community of coffee enthusiasts!</p>
+        <p>As a member, you'll enjoy exclusive benefits:</p>
+        <ul>
+          <li>🌟 <b>Special Offers</b>: Get access to members-only discounts and promotions.</li>
+          <li>📅 <b>Monthly Newsletter</b>: Stay in the know with the latest in coffee trends, recipes, and tips.</li>
+          <li>🎉 <b>Invitations to Events</b>: Be the first to know about our coffee tasting events and workshops.</li>
+          <li>🎁 <b>Birthday Treat</b>: Celebrate your special day with a complimentary cup of our finest brew.</li>
+        </ul>
+        <p>Signing up is quick and easy. Just fill in your details below and get ready to embark on a flavorful journey with us. Let's brew some magic together!</p>
+      </div>
+    </div>
+    <div class="form-box shadow top bottom">
+      <h2>Let's do this!</h2>
+      <form action="https://httpbin.org/post" method="post" id="da-form">
         <div class="form-row">
-          <label for="first-name">First Name</label>
-          <input type="text" name="user-first-name" id="first-name">
-          <label for="last-name">Last Name</label>
-          <input type="text" name="user-last-name" id="last-name">
+          <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" name="user-first-name" id="first-name">
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" name="user-last-name" id="last-name">
+          </div>
         </div>
 
         <div class="form-row">
-          <label for="email">Email</label>
-          <input type="email" name="user-email" id="email">
-          <label for="tel">Phone Number</label>
-          <input type="tel" name="user-telephone" id="tel">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="user-email" id="email">
+          </div>
+          <div class="form-group">
+            <label for="tel">Phone Number</label>
+            <input type="tel" name="user-telephone" id="tel" pattern="\d{3}-\d{3}-\d{4}">
+          </div>
         </div>
 
-        <div class="form-row">
-          <label for="pwd">Password</label>
-          <input type="password" name="user-password" id="pwd">
-          <label for="pwd-confirm">Confirm Password</label>
-          <input type="password" id="pwd-confirm">
+        <div class="form-row" id="pwd-group">
+          <div class="form-group">
+            <label for="pwd">Password</label>
+            <input type="password" name="user-password" id="pwd">
+            <div class="pwd-error-message"><br></div>
+          </div>
+          <div class="form-group">
+            <label for="pwd-confirm">Confirm Password</label>
+            <input type="password" id="pwd-confirm">
+          </div>
         </div>
-
-        <button type="submit">Create Account</button>
-        <div>Already have an account? <a href="">Log in</a></div>
       </form>
     </div>
-    <div class="submit-box"></div>
+    <div class="submit-box">
+      <button type="submit" form="da-form">Create Account</button>
+      <div>Already have an account? <a href="">Log in</a></div>
+    </div>
   </div>
 </body>
 </html>
